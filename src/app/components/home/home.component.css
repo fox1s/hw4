@@ -1,0 +1,11 @@
+.title-hw-text {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.title-hw-div {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+
+}
