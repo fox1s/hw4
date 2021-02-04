@@ -1,0 +1,23 @@
+.user-div > span {
+  font-size: 25px;
+}
+
+.user-div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.btn {
+  margin-left: 15px;
+  border: 1px solid #282c34;
+  background: white;
+}
+
+.btn:hover {
+  color: #fff;
+  background: #3f4858;
+  tansition: all .3s linear;
+  -webkit-transition: all .3s linear;
+  -moz-transition: all .3s linear;
+}

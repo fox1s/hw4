@@ -1,1 +1,6 @@
-<p>user works!</p>
+<div [className]="'user-div'">
+
+  <span>{{user.id}}. {{user.name}} | email {{user.email}} | username -{{user.username}}</span>
+<button [className]="'btn'" (click)="chosenUserInfo()">details</button>
+</div>
+
