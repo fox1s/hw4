@@ -3,5 +3,23 @@
 }
 
 .div-chosenUser {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-chosenUser {
+  margin-left: 15px;
+  border: 1px solid #282c34;
+  background: white;
+}
+
+.btn-chosenUser:hover {
+  color: #fff;
+  background: #3f4858;
+  -webkit-transition: all .3s linear;
+  -moz-transition: all .3s linear;
+}
+
+.main-div-chosenUser {
   margin-top: 30px;
 }

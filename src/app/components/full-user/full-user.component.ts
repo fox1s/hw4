@@ -20,4 +20,7 @@ export class FullUserComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getPostsForChosenUser(): void {
+    this.router.navigate(['posts'], {relativeTo: this.activatedRoute});
+  }
 }

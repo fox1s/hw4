@@ -11,13 +11,17 @@ import {UsersComponent} from './components/users/users.component';
 import {UserResolveService} from './services/user-resolve.service';
 import {HomeComponent} from './components/home/home.component';
 import {FullUserComponent} from './components/full-user/full-user.component';
+import { PostOfUserComponent } from './components/post-of-user/post-of-user.component';
+import {PostsResolveService} from './services/posts-resolve.service';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'posts', component: PostsComponent},
+  {path: 'all-posts', component: PostsComponent},
   {
     path: 'users', component: UsersComponent, resolve: {usersData: UserResolveService}, children: [
-      {path: ':id', component: FullUserComponent}
+      {path: ':id', component: FullUserComponent, children: [
+          {path: 'posts', component: PostOfUserComponent, resolve: {postsData: PostsResolveService}}
+        ]}
     ]
   }
 ];
@@ -31,7 +35,8 @@ const routes: Routes = [
     UserComponent,
     UsersComponent,
     HomeComponent,
-    FullUserComponent
+    FullUserComponent,
+    PostOfUserComponent
   ],
   imports: [
     BrowserModule,

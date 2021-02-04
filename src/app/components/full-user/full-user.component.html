@@ -1,5 +1,9 @@
-<div [className]="'div-chosenUser'">
+<div [className]="'main-div-chosenUser'">
   <hr>
-  <span [className]="'chosenUser'">{{chosenUser.id}}. {{chosenUser.name}}</span>
-
+  <div [className]="'div-chosenUser'">
+    <span [className]="'chosenUser'">{{chosenUser.id}}. {{chosenUser.name}}</span>
+    <button [className]="'btn-chosenUser'" (click)="getPostsForChosenUser()">Posts</button>
+  </div>
 </div>
+
+<router-outlet></router-outlet>
