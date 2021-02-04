@@ -21,6 +21,6 @@ export class FullUserComponent implements OnInit {
   }
 
   getPostsForChosenUser(): void {
-    this.router.navigate(['posts'], {relativeTo: this.activatedRoute});
+    this.router.navigate(['posts'], {relativeTo: this.activatedRoute, state: this.chosenUser});
   }
 }

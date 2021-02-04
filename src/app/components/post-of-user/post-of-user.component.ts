@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {IPosts} from '../../models/Posts';
 
 @Component({
@@ -10,14 +10,16 @@ import {IPosts} from '../../models/Posts';
 export class PostOfUserComponent implements OnInit {
 
   posts: IPosts[];
-
-  constructor(private activatedRoute: ActivatedRoute) {
-    this.activatedRoute.data.subscribe(value => this.posts = value.postsData.filter(post => post.userId === 1));
+  idOfUser;
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) {
+    this.activatedRoute.params.subscribe(value => {
+      this.idOfUser = this.router.getCurrentNavigation().extras.state.id;
+    });
+    this.activatedRoute.data.subscribe(value => this.posts = value.postsData.filter(post => post.userId === this.idOfUser));
 
   }
 
   ngOnInit(): void {
-    console.log(this.posts);
   }
 
 }
